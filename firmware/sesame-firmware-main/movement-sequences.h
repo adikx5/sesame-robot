@@ -438,7 +438,6 @@ inline void runWalkPose() {
     if (!pressingCheck("forward", frameDelay)) return;
     setServoAngle(R3, 135);
     setServoAngle(R1, 135);
-    if (!pressingCheck("forward", frameDelay)) return;
     setServoAngle(L3, 0);
     setServoAngle(L2, 90);
     if (!pressingCheck("forward", frameDelay)) return;
