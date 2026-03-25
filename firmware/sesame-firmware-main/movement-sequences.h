@@ -438,10 +438,11 @@ inline void runWalkPose() {
     if (!pressingCheck("forward", frameDelay)) return;
     setServoAngle(R3, 135);
     setServoAngle(R1, 135);
+    if (!pressingCheck("forward", frameDelay)) return;
     setServoAngle(L3, 0);
     setServoAngle(L2, 90);
     if (!pressingCheck("forward", frameDelay)) return;
-    setServoAngle(L1, 90);
+    setServoAngle(L1, 45);
     setServoAngle(R2, 0);
     if (!pressingCheck("forward", frameDelay)) return;
     setServoAngle(L3, 45);
@@ -449,11 +450,11 @@ inline void runWalkPose() {
     if (!pressingCheck("forward", frameDelay)) return;
     setServoAngle(L4, 180);
     setServoAngle(R4, 45);
-    setServoAngle(L1, 45);
-    setServoAngle(R2, 90);
+    setServoAngle(L1, 0);
+    setServoAngle(R2, 45);
     if (!pressingCheck("forward", frameDelay)) return;
     setServoAngle(R1, 90);
-    setServoAngle(L2, 180);
+    setServoAngle(L2, 135);
     if (!pressingCheck("forward", frameDelay)) return;
 
 
@@ -485,10 +486,10 @@ inline void runWalkBackward() {
     setServoAngle(R3, 180);
     setServoAngle(L3, 45);
     setServoAngle(R2, 45);
-    setServoAngle(L1, 90);
+    setServoAngle(L1, 45);
     if (!pressingCheck("backward", frameDelay)) return;
     setServoAngle(L2, 90);
-    setServoAngle(R1, 180);
+    setServoAngle(R1, 135);
     if (!pressingCheck("backward", frameDelay)) return;
   }
   runStandPose(1);
