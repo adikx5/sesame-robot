@@ -429,9 +429,9 @@ inline void runWalkPose() {
 
   for (int i = 0; i < walkCycles; i++) {
 
- //   R1 <-> L2 ; 
+ //   R1 <-> L2 ;
  //   L1 <-> R2 ;
- //   L3 <-> R4 ; 
+ //   L3 <-> R4 ;
  //   L4 <-> R3 ;
     setServoAngle(L4, 135);
     setServoAngle(R4, 0);
@@ -500,6 +500,9 @@ inline void runTurnLeft() {
   setFaceWithMode("walk", FACE_ANIM_ONCE);
   for (int i = 0; i < walkCycles; i++) {
     //legset 1 (R1 L2)
+    // Angling the other legs slightly to force weight on the turning legs
+    setServoAngle(R4, 5);
+    setServoAngle(L3, 5);
     setServoAngle(R3, 135);
     setServoAngle(L4, 135);
     if (!pressingCheck("left", frameDelay)) return;
@@ -513,6 +516,9 @@ inline void runTurnLeft() {
     setServoAngle(L2, 135);
     if (!pressingCheck("left", frameDelay)) return;
     //legset 2 (R2 L1)
+    // Angling the other legs slightly to force weight on the turning legs
+    setServoAngle(R3, 175);
+    setServoAngle(L4, 175);
     setServoAngle(R4, 45);
     setServoAngle(L3, 45);
     if (!pressingCheck("left", frameDelay)) return;
@@ -533,7 +539,12 @@ inline void runTurnRight() {
   Serial.println(F("TURN RIGHT"));
   setFaceWithMode("walk", FACE_ANIM_ONCE);
   for (int i = 0; i < walkCycles; i++) {
+
     //legset 2 (R2 L1)
+    // Angling the other legs slightly to force weight on the turning legs
+    setServoAngle(R3, 175);
+    setServoAngle(L4, 175);
+    if (!pressingCheck("right", frameDelay)) return;
     setServoAngle(R4, 45);
     setServoAngle(L3, 45);
     if (!pressingCheck("right", frameDelay)) return;
@@ -547,6 +558,10 @@ inline void runTurnRight() {
     setServoAngle(L1, 45);
     if (!pressingCheck("right", frameDelay)) return;
     //legset 1 (R1 L2)
+    // Angling the other legs slightly to force weight on the turning legs
+    setServoAngle(R4, 5);
+    setServoAngle(L3, 5);
+    if (!pressingCheck("right", frameDelay)) return;
     setServoAngle(R3, 135);
     setServoAngle(L4, 135);
     if (!pressingCheck("right", frameDelay)) return;
