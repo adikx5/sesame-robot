@@ -545,7 +545,6 @@ inline void runTurnRight() {
     // Angling the other legs slightly to force weight on the turning legs
     setServoAngle(R3, 175);
     setServoAngle(L4, 175);
-    if (!pressingCheck("right", frameDelay)) return;
     setServoAngle(R4, 45);
     setServoAngle(L3, 45);
     if (!pressingCheck("right", frameDelay)) return;
@@ -562,7 +561,6 @@ inline void runTurnRight() {
     // Angling the other legs slightly to force weight on the turning legs
     setServoAngle(R4, 5);
     setServoAngle(L3, 5);
-    if (!pressingCheck("right", frameDelay)) return;
     setServoAngle(R3, 135);
     setServoAngle(L4, 135);
     if (!pressingCheck("right", frameDelay)) return;
